@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link id="currentStyle" rel="stylesheet" type="text/css" href="pathGamecss.css">
+</head>
+<body>
+
+<div onmouseover="over(this)" onmouseout="out(this)"
+  class="welcome"> Welcome </div>
+
+<h3> A door opens... </h3>
+<h6> Note: This took an estimated time of: 8-9 hours. </h6>
+<h6> Thank you to <a href="https://agirlandhermac.design/resources/side-side-html-buttons/">this site</a> and <a href="https://stackoverflow.com/questions/56111480/how-can-i-hide-a-div-until-a-button-is-clicked/56111499">this page</a> for helping me </h6>
+<div class="chooseB">
+  <button onclick="hide('begin'); hide('cat'); hide('toBookcase'); hide('catPic')"> Click to begin </button> </div>
+<!--Beginning -->
+<div id='begin' style="display:none">
+<p> You enter what seems to be a house. You don't remember how you got here, or how to get out. The door you came in suddenly slams and locks before you think to go back to it. Guess you can't leave that way. <br>
+  You see a calico cat stretching in front of a gate to your left. On your right, there is a grand burgundy bookcase. It seems like there is something behind it. <br>
+  Where should you go? </p> </div>
+  <div id='catPic' style="display:none">
+    <img src="https://us.123rf.com/450wm/djvstock/djvstock1612/djvstock161209099/67217571-cute-cat-cartoon-icon-vector-illustration-graphic-design.jpg?ver=6" alt="A picture of a stretching calico cat."> </div>
+
+
+<!--Choice 1 (main room) Towards the cat -------------------->
+<div id ='cat' class="chooseB" style="display:none">
+  <button id = 'catB' onclick="hide('catT'); hide('stairs'); hide('doorB'); hide('stairs')"> Go towards the curious cat. </button> </div>
+
+<!--To cat + past gate and down stairs-->
+<p id='catT' style="display:none"> You begin to take a few careful steps towards the cat. Unfortunately, the cat instinctively
+  hopped away as soon as it sensed movement. The path now clear, you open the creaky gate and notice
+  it leads down a flight of stairs. You start to go down them. <br>
+  Amidst the growing darkness of each step, you notice a small hanging candle illuminates a door to your left. Which way should you go?
+  </p>
+
+  <!--Choice 1(in stairs): Go to the door (bathroom).-->
+  <div id = 'doorB' class="chooseB" style="display:none">
+    <button onclick="hide('doorT'); hide('note'); hide('doorT2')"> Walk towards the door. </button> </div>
+      <p id ='doorT' style="display:none"> When you move closer towards the door, you notice a small rusty handle and turn it. The door slowly creaks open...<br>
+      and it's a bathroom! Hm, weird place for this to be. Either way, you look inside and see a note with scratchy handwriting on the mirror. <br>
+
+      <div id='note' onmousedown="mDown(this)" onmouseup="mUp(this)"
+      style="display:none; background-color:#D94A38;width:160px;height:60px;padding:15px; margin: auto;">
+      Look at the note</div>
+    <p id='doorT2' style="display: none">  For some reason, you get the feeling that you need to try something again. <br>
+       <i> Please refresh the page and try to go a different path. </i> </p>
+
+<!--Choice 2 (in stairs): Keep going down stairs-->
+  <div id = 'stairs' class="chooseB" style="display:none">
+    <button onclick="hide('batT'); hide('riddleB')"> Keep going down the stairs. </button> </div>
+    <p id ='batT' style="display:none"> You decide to keep descending deeper into the eerie stairwell. When you reach the bottom, you hear
+    the sound of wings quickly flapping over your head. With the slight amount of light in the room, you notice it is filled with sleeping bats. <br>
+    One opens its eyes and seems to smirk. Without moving his mouth, the bat says: <br>
+    <b> <i> "I have keys but no locks. I have a space but no room. <br>
+            You can enter, but you can’t go outside. <br>
+            What am I?" </b> </i> </p>
+
+<!--Answer bat's riddle-->
+  <div id ='riddleB' class="chooseB" style="display:none">
+      <button onclick="riddle()"> Attempt to answer the bat's riddle. </button> </div>
+     <p id='win'></p>
+<!--WIN!!! ^-->
+
+<!--Choice 2 (main room): Bookcase--------------------------->
+<div id ='toBookcase' class="chooseB" style="display:none">
+    <button onclick="hide('bookT'); hide('holeB'); hide('bookPic')"> Investigate the bookcase. </button> </div>
+    <p id='bookT' style="display:none"> You walk towards the bookcase. You notice there seems to be some sort of crack in the wall. You push the bookcase to the right. <br>
+      Ah ha! A large gaping hole in the wall enters your view. You wonder why the owner didn't just put a regular door there like a normal person. <br> </p>
+      <div id='bookPic' style="display:none">
+        <img src="https://static8.depositphotos.com/1072020/991/v/600/depositphotos_9917107-stock-illustration-vector-wooden-bookshelf-with-books.jpg" alt="A picture of a bookshelf with books of various topics, such as physics, business, science and more."> </div>
+
+<!--Go in the wall-->
+      <div id ='holeB' class="chooseB" style="display:none">
+          <button onclick="hide('holeT'); hide('roofB')"> Go into the hole. </button> </div>
+          <p id='holeT' style="display:none"> You decide to enter the unusual gap in the wall. You find that there are jutting platforms and decide to climb up them. <br>
+            On your way up, you notice something that looks like an attic hatch. Should you proceed? <br> </p>
+
+<!--Choice (in area past bookcase): Go up to roof.-->
+        <div id ='roofB' class="chooseB" style="display:none">
+            <button onclick="hide('roofT'); hide('comp')"> Open the hatch. </button> </div>
+            <p id='roofT' style="display:none"> You choose to open the door that's above you. Instead of an attic though, you find the roof! <br>
+              You take note of the steep height between you and the ground. Guess you can't leave that way. You look up and notice the beautiful starry night. There's something there... <br>
+              Huh? A computer? You hear a slight whisper: <br>
+              <b> <i> "The places you may enter lie closer than you think. Perhaps the tools you use to get there are right in the palms of your hands." </b> </i> <br>
+              You get the feeling this will help you elsewhere. <br>
+              <i> Please refresh the page and try to go a different path. </i> </p>
+          <div id='comp' style="display:none">
+            <img src="https://i.gifer.com/4XCW.gif" alt="A floating computer with a starry screen."  style-"width:40% height:40%"> </div>
+
+
+<script src="pathGamejs.js"> </script>
+</body>
+
+</html>
